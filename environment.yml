@@ -1,0 +1,30 @@
+name: pragmatic-consistency
+channels:
+  - defaults
+dependencies:
+  - cudatoolkit=10.1
+  - pytorch::pytorch=1.6.0
+  - python=3.6.8
+  - pip=20.1.1
+  - pip:
+    # ParlAI (use commit of 1st of October, 2020)
+    - git+https://github.com/facebookresearch/ParlAI.git@9cd6b6c0e70c72a24e959e4a328cb4093eb7f3de
+    - torchtext==0.7.0
+    - spacy==2.3.2
+    - pytorch-transformers==1.2.0
+    # For logging
+    - tqdm
+    - better-exceptions
+    # For linting
+    - pylint
+    - pycodestyle
+    - mypy
+    # For markdown preview
+    - grip
+    # etc
+    - ruamel.yaml
+    - more_itertools
+    - isort
+    - pudb
+    - jupyter
+    - orderedset
