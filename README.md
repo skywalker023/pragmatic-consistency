@@ -33,7 +33,7 @@ Please contact [Hyunwoo Kim](https://hyunw.kim) at hyunw.kim@vl.snu.ac.kr.
 
 ## Acknowledgements
 
-We would like to thank [Reuben Cohn-Gordon](https://reubencohngordon.com/), [Sean Welleck](https://cs.nyu.edu/~welleck/), [Junhyug Noh](https://junhyug.github.io/) and Jiwan Chung for their valuable comments. We also thank the anonymous reviewers for their thoughtful suggestions on this work.
+We would like to thank [Reuben Cohn-Gordon](https://reubencohngordon.com/), [Sean Welleck](https://cs.nyu.edu/~welleck/), [Junhyug Noh](https://junhyug.github.io/) and [Jiwan Chung](https://vl.snu.ac.kr/people/jiwanchung.html) for their valuable comments. We also thank the anonymous reviewers for their thoughtful suggestions on this work.
 
 This research was supported by Brain Research Program by National Research Foundation of Korea (NRF) (2017M3C7A1047860), Institute of Information \& communications Technology Planning \& Evaluation (IITP) grant funded by the Korea government (MSIT) (No. 2017-0-01772, Video Turing Test, No. 2019-0-01082, SW StarLab), and Creative Pioneering Researchers Program through Seoul National University.
 
