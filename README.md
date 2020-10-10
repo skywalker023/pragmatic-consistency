@@ -2,12 +2,12 @@
 
 ![figure](assets/figure1.png)
 
-**Official PyTorch implementation of our EMNLP 2020 paper:**<br>
+**Official PyTorch implementation of our EMNLP paper:**<br>
 [Hyunwoo Kim](https://hyunw.kim), [Byeongchang Kim](https://bckim92.github.io), and [Gunhee Kim](https://vision.snu.ac.kr/gunhee). Will I Sound Like Me? Improving Persona Consistency in Dialogues through Pragmatic Self-Consciousness. _EMNLP_, 2020 [[Paper]](https://arxiv.org/abs/2004.05816)
 
-* **TL;DR**: Inspired by social cognition and pragmatics, we model _public self-consciousness_ in existing dialogue agents with an imaginary listener to improve persona consistency. Compared to previous works, our method does not require additional consistency-related labels or training.
+* **TL;DR**: Inspired by social cognition and pragmatics, we model _public self-consciousness_ in existing dialogue agents with an imaginary listener to improve consistency. Compared to previous works, our method does not require additional consistency-related labels or training.
 
-This work was also accepted at ICLR 2020 [Bridging AI and Cognitive Science (BAICS) workshop](https://baicsworkshop.github.io/) as an oral presentation.
+Earlier version of this work was also accepted at ICLR 2020 [Bridging AI and Cognitive Science (BAICS) workshop](https://baicsworkshop.github.io/) as an oral presentation.
 
 
 ## Reference
@@ -23,13 +23,65 @@ If you use the materials in this repository as part of any published research, w
 }
 ```
 
-## Code (TBU)
-
-Our code is built on the [ParlAI](https://parl.ai/) framework.<br>
-The codes will be updated soon!
-
 ### Have any question?
 Please contact [Hyunwoo Kim](https://hyunw.kim) at hyunw.kim@vl.snu.ac.kr.
+
+## Implementation
+
+### System Requirements
+
+* Python 3.6.8
+* Pytorch 1.6.0
+* CUDA 10.1 supported GPU with at least 12GB memory
+* See [environment.yml](https://github.com/skywalker023/pragmatic-consistency/blob/master/environment.yml) for details
+
+### Environment setup
+
+Our code is built on the [ParlAI](https://parl.ai/) framework.<br>
+We recommend you create a conda environment as follows
+
+```bash
+conda env create -f environment.yml
+```
+
+and activate it with
+
+```bash
+conda activate pragmatic-consistency
+```
+
+## Running Experiments
+
+### Self-conscious Blender for its persona
+
+#### Dialogue NLI
+
+```bash
+python eval_dnli.py --conscious-target self -t tasks.teachers:SelfConsciousDialogueTeacher --model agents.selfconscious_blender:SelfConsciousBlenderAgent --fp16 false
+```
+
+#### PersonaChat
+
+```bash
+python eval_personachat.py --conscious-target self -t tasks.teachers:SelfConsciousDialogueTeacher --model agents.selfconscious_blender:SelfConsciousBlenderAgent --batchsize 48 --fp16 false
+```
+
+### Self-conscious Blender for its context
+
+#### Dialogue NLI
+
+```bash
+python eval_dnli.py --conscious-target context -t tasks.teachers:ContextConsciousDialogueTeacher --model agents.selfconscious_blender:SelfConsciousBlenderAgent --fp16 false
+```
+
+#### PersonaChat
+
+```bash
+python eval_personachat.py --conscious-target context -t tasks.teachers:ContextConsciousDialogueTeacher --model agents.selfconscious_blender:SelfConsciousBlenderAgent --batchsize 48 --fp16 false
+```
+
+💡 In case you want to run the evaluation with vanilla Blender as is, set the `--conscious-target` to `none`.
+
 
 ## Acknowledgements
 
